@@ -8,8 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		075280813D6B486AE6AADD40 /* Pods_Budgie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CF6AD66F0E17080E1F6AC8 /* Pods_Budgie.framework */; };
+		C037E21F1E4BC56400D2DDBC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C037E21D1E4BC56400D2DDBC /* HomeViewController.swift */; };
+		C037E2201E4BC56400D2DDBC /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C037E21E1E4BC56400D2DDBC /* HomeViewController.xib */; };
+		C037E2241E4BC71800D2DDBC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C037E2231E4BC71800D2DDBC /* Constants.swift */; };
+		C037E2271E4BD28900D2DDBC /* HomeTweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C037E2251E4BD28900D2DDBC /* HomeTweetCell.swift */; };
+		C037E2281E4BD28900D2DDBC /* HomeTweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C037E2261E4BD28900D2DDBC /* HomeTweetCell.xib */; };
+		C037E22B1E4BD63A00D2DDBC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C037E2291E4BD63A00D2DDBC /* MainTabBarController.swift */; };
+		C037E2321E4BDFBB00D2DDBC /* ComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C037E2301E4BDFBB00D2DDBC /* ComposerViewController.swift */; };
+		C037E2331E4BDFBB00D2DDBC /* ComposerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C037E2311E4BDFBB00D2DDBC /* ComposerViewController.xib */; };
+		C037E2361E4BE00200D2DDBC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C037E2341E4BE00200D2DDBC /* ProfileViewController.swift */; };
+		C037E2371E4BE00200D2DDBC /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C037E2351E4BE00200D2DDBC /* ProfileViewController.xib */; };
 		C06FE7B41E4BA80D0078A9EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06FE7B31E4BA80D0078A9EE /* AppDelegate.swift */; };
-		C06FE7B61E4BA80D0078A9EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06FE7B51E4BA80D0078A9EE /* ViewController.swift */; };
 		C06FE7B91E4BA80D0078A9EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C06FE7B71E4BA80D0078A9EE /* Main.storyboard */; };
 		C06FE7BB1E4BA80D0078A9EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C06FE7BA1E4BA80D0078A9EE /* Assets.xcassets */; };
 		C06FE7BE1E4BA80D0078A9EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C06FE7BC1E4BA80D0078A9EE /* LaunchScreen.storyboard */; };
@@ -19,9 +28,18 @@
 		4EF5686A29FC25B53F199234 /* Pods-Budgie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budgie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Budgie/Pods-Budgie.release.xcconfig"; sourceTree = "<group>"; };
 		69A76EC6FBDEB968AEB2F3DA /* Pods-Budgie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budgie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Budgie/Pods-Budgie.debug.xcconfig"; sourceTree = "<group>"; };
 		B2CF6AD66F0E17080E1F6AC8 /* Pods_Budgie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Budgie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C037E21D1E4BC56400D2DDBC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Home/HomeViewController.swift; sourceTree = "<group>"; };
+		C037E21E1E4BC56400D2DDBC /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeViewController.xib; path = Home/HomeViewController.xib; sourceTree = "<group>"; };
+		C037E2231E4BC71800D2DDBC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Common/Constants.swift; sourceTree = "<group>"; };
+		C037E2251E4BD28900D2DDBC /* HomeTweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTweetCell.swift; path = Home/HomeTweetCell.swift; sourceTree = "<group>"; };
+		C037E2261E4BD28900D2DDBC /* HomeTweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeTweetCell.xib; path = Home/HomeTweetCell.xib; sourceTree = "<group>"; };
+		C037E2291E4BD63A00D2DDBC /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = TabBar/MainTabBarController.swift; sourceTree = "<group>"; };
+		C037E2301E4BDFBB00D2DDBC /* ComposerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComposerViewController.swift; path = Composer/ComposerViewController.swift; sourceTree = "<group>"; };
+		C037E2311E4BDFBB00D2DDBC /* ComposerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComposerViewController.xib; path = Composer/ComposerViewController.xib; sourceTree = "<group>"; };
+		C037E2341E4BE00200D2DDBC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Profile/ProfileViewController.swift; sourceTree = "<group>"; };
+		C037E2351E4BE00200D2DDBC /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = Profile/ProfileViewController.xib; sourceTree = "<group>"; };
 		C06FE7B01E4BA80D0078A9EE /* Budgie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budgie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06FE7B31E4BA80D0078A9EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C06FE7B51E4BA80D0078A9EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C06FE7B81E4BA80D0078A9EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C06FE7BA1E4BA80D0078A9EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C06FE7BD1E4BA80D0078A9EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +75,50 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C037E21C1E4BC3B800D2DDBC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		C037E2211E4BC56A00D2DDBC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C037E21D1E4BC56400D2DDBC /* HomeViewController.swift */,
+				C037E21E1E4BC56400D2DDBC /* HomeViewController.xib */,
+				C037E2251E4BD28900D2DDBC /* HomeTweetCell.swift */,
+				C037E2261E4BD28900D2DDBC /* HomeTweetCell.xib */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		C037E2221E4BC58200D2DDBC /* Composer */ = {
+			isa = PBXGroup;
+			children = (
+				C037E2301E4BDFBB00D2DDBC /* ComposerViewController.swift */,
+				C037E2311E4BDFBB00D2DDBC /* ComposerViewController.xib */,
+			);
+			name = Composer;
+			sourceTree = "<group>";
+		};
+		C037E22D1E4BD7B200D2DDBC /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				C037E2231E4BC71800D2DDBC /* Constants.swift */,
+			);
+			name = Commons;
+			sourceTree = "<group>";
+		};
+		C037E22E1E4BDD3700D2DDBC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C037E2341E4BE00200D2DDBC /* ProfileViewController.swift */,
+				C037E2351E4BE00200D2DDBC /* ProfileViewController.xib */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		C06FE7A71E4BA80D0078A9EE = {
 			isa = PBXGroup;
 			children = (
@@ -78,8 +140,13 @@
 		C06FE7B21E4BA80D0078A9EE /* Budgie */ = {
 			isa = PBXGroup;
 			children = (
+				C037E22D1E4BD7B200D2DDBC /* Commons */,
+				C037E21C1E4BC3B800D2DDBC /* Models */,
+				C037E2211E4BC56A00D2DDBC /* Home */,
+				C037E22E1E4BDD3700D2DDBC /* Profile */,
+				C037E2221E4BC58200D2DDBC /* Composer */,
+				C037E2291E4BD63A00D2DDBC /* MainTabBarController.swift */,
 				C06FE7B31E4BA80D0078A9EE /* AppDelegate.swift */,
-				C06FE7B51E4BA80D0078A9EE /* ViewController.swift */,
 				C06FE7B71E4BA80D0078A9EE /* Main.storyboard */,
 				C06FE7BA1E4BA80D0078A9EE /* Assets.xcassets */,
 				C06FE7BC1E4BA80D0078A9EE /* LaunchScreen.storyboard */,
@@ -152,9 +219,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C037E2371E4BE00200D2DDBC /* ProfileViewController.xib in Resources */,
+				C037E2331E4BDFBB00D2DDBC /* ComposerViewController.xib in Resources */,
 				C06FE7BE1E4BA80D0078A9EE /* LaunchScreen.storyboard in Resources */,
+				C037E2281E4BD28900D2DDBC /* HomeTweetCell.xib in Resources */,
 				C06FE7BB1E4BA80D0078A9EE /* Assets.xcassets in Resources */,
 				C06FE7B91E4BA80D0078A9EE /* Main.storyboard in Resources */,
+				C037E2201E4BC56400D2DDBC /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,8 +297,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C06FE7B61E4BA80D0078A9EE /* ViewController.swift in Sources */,
+				C037E2321E4BDFBB00D2DDBC /* ComposerViewController.swift in Sources */,
 				C06FE7B41E4BA80D0078A9EE /* AppDelegate.swift in Sources */,
+				C037E22B1E4BD63A00D2DDBC /* MainTabBarController.swift in Sources */,
+				C037E21F1E4BC56400D2DDBC /* HomeViewController.swift in Sources */,
+				C037E2361E4BE00200D2DDBC /* ProfileViewController.swift in Sources */,
+				C037E2271E4BD28900D2DDBC /* HomeTweetCell.swift in Sources */,
+				C037E2241E4BC71800D2DDBC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
