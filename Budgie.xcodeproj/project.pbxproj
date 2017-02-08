@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		075280813D6B486AE6AADD40 /* Pods_Budgie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CF6AD66F0E17080E1F6AC8 /* Pods_Budgie.framework */; };
 		C06FE7B41E4BA80D0078A9EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06FE7B31E4BA80D0078A9EE /* AppDelegate.swift */; };
 		C06FE7B61E4BA80D0078A9EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06FE7B51E4BA80D0078A9EE /* ViewController.swift */; };
 		C06FE7B91E4BA80D0078A9EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C06FE7B71E4BA80D0078A9EE /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4EF5686A29FC25B53F199234 /* Pods-Budgie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budgie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Budgie/Pods-Budgie.release.xcconfig"; sourceTree = "<group>"; };
+		69A76EC6FBDEB968AEB2F3DA /* Pods-Budgie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budgie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Budgie/Pods-Budgie.debug.xcconfig"; sourceTree = "<group>"; };
+		B2CF6AD66F0E17080E1F6AC8 /* Pods_Budgie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Budgie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06FE7B01E4BA80D0078A9EE /* Budgie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budgie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06FE7B31E4BA80D0078A9EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C06FE7B51E4BA80D0078A9EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				075280813D6B486AE6AADD40 /* Pods_Budgie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9161978CBCFE2FE661D5CB2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				69A76EC6FBDEB968AEB2F3DA /* Pods-Budgie.debug.xcconfig */,
+				4EF5686A29FC25B53F199234 /* Pods-Budgie.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B428E7EEEB01A414C4B84019 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2CF6AD66F0E17080E1F6AC8 /* Pods_Budgie.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C06FE7A71E4BA80D0078A9EE = {
 			isa = PBXGroup;
 			children = (
 				C06FE7B21E4BA80D0078A9EE /* Budgie */,
 				C06FE7B11E4BA80D0078A9EE /* Products */,
+				A9161978CBCFE2FE661D5CB2 /* Pods */,
+				B428E7EEEB01A414C4B84019 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C06FE7C21E4BA80D0078A9EE /* Build configuration list for PBXNativeTarget "Budgie" */;
 			buildPhases = (
+				A365BC89426D7E6E1C1E1708 /* [CP] Check Pods Manifest.lock */,
 				C06FE7AC1E4BA80D0078A9EE /* Sources */,
 				C06FE7AD1E4BA80D0078A9EE /* Frameworks */,
 				C06FE7AE1E4BA80D0078A9EE /* Resources */,
+				91FF825AB23CA8F4F239223F /* [CP] Embed Pods Frameworks */,
+				23E906CA51F9CC2D0ACC09ED /* [CP] Copy Pods Resources */,
+				C06FE7C51E4BAC8A0078A9EE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -131,6 +159,67 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23E906CA51F9CC2D0ACC09ED /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Budgie/Pods-Budgie-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91FF825AB23CA8F4F239223F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Budgie/Pods-Budgie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A365BC89426D7E6E1C1E1708 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C06FE7C51E4BAC8A0078A9EE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C06FE7AC1E4BA80D0078A9EE /* Sources */ = {
@@ -259,6 +348,7 @@
 		};
 		C06FE7C31E4BA80D0078A9EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69A76EC6FBDEB968AEB2F3DA /* Pods-Budgie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = R6WE745C5Z;
@@ -272,6 +362,7 @@
 		};
 		C06FE7C41E4BA80D0078A9EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EF5686A29FC25B53F199234 /* Pods-Budgie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = R6WE745C5Z;
@@ -302,6 +393,7 @@
 				C06FE7C41E4BA80D0078A9EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
