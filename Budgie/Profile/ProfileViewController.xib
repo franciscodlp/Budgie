@@ -1,20 +1,52 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="Budgie" customModuleProvider="target">
             <connections>
+                <outlet property="imageView" destination="Ub8-nU-qNE" id="Vil-OK-3ap"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work In Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYN-No-eSd">
+                    <rect key="frame" x="8" y="115" width="398" height="29"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <color key="textColor" red="0.23529411759999999" green="0.35686274509999999" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WorkingCat" translatesAutoresizingMaskIntoConstraints="NO" id="Ub8-nU-qNE">
+                    <rect key="frame" x="82.666666666666686" y="243.66666666666669" width="248.66666666666663" height="248.66666666666669"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Ub8-nU-qNE" secondAttribute="height" multiplier="1:1" id="frY-v7-biV"/>
+                    </constraints>
+                </imageView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Ub8-nU-qNE" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="2t3-g8-vyO"/>
+                <constraint firstItem="HYN-No-eSd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="3Df-Nd-zBj"/>
+                <constraint firstItem="Ub8-nU-qNE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="99Z-qi-oSF"/>
+                <constraint firstItem="HYN-No-eSd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="115" id="DlK-Wl-Veb"/>
+                <constraint firstAttribute="trailing" secondItem="HYN-No-eSd" secondAttribute="trailing" constant="8" id="Iq5-gA-iUO"/>
+                <constraint firstItem="Ub8-nU-qNE" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.6" id="mYf-5b-57C"/>
+            </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="WorkingCat" width="600" height="400"/>
+    </resources>
 </document>

@@ -10,6 +10,8 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+  @IBOutlet var imageView: UIImageView!
+  
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }
@@ -20,7 +22,9 @@ class ProfileViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    imageView.layer.borderColor = UIColor.myBlue.cgColor
+    imageView.layer.borderWidth = 2
+    imageView.layer.cornerRadius = 5
   }
 
 }

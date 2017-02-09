@@ -18,13 +18,13 @@ class MainTabBarController: UITabBarController {
     homeViewController.title = k.homeTabBarTitle
 
     let homeNavigationController = UINavigationController(rootViewController: homeViewController)
+    homeNavigationController.tabBarItem.image = k.homeTabBarIcon
 
-    let profileViewController = UIViewController()
+    let profileViewController = ProfileViewController(nibName: k.profileNIBName, bundle: nil)
+    profileViewController.tabBarItem.image = k.profileTabBarIcon
     profileViewController.title = k.profileTabBarTitle
-    profileViewController.view.backgroundColor = .green
 
     self.viewControllers = [homeNavigationController, profileViewController]
-
   }
 
 }
