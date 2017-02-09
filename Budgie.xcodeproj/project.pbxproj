@@ -18,6 +18,9 @@
 		C037E2331E4BDFBB00D2DDBC /* ComposerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C037E2311E4BDFBB00D2DDBC /* ComposerViewController.xib */; };
 		C037E2361E4BE00200D2DDBC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C037E2341E4BE00200D2DDBC /* ProfileViewController.swift */; };
 		C037E2371E4BE00200D2DDBC /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C037E2351E4BE00200D2DDBC /* ProfileViewController.xib */; };
+		C037E2391E4BE42000D2DDBC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C037E2381E4BE42000D2DDBC /* Colors.swift */; };
+		C037E23B1E4BE62200D2DDBC /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C037E23A1E4BE62200D2DDBC /* Appearance.swift */; };
+		C037E23D1E4C094E00D2DDBC /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C037E23C1E4C094E00D2DDBC /* Tweet.swift */; };
 		C06FE7B41E4BA80D0078A9EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06FE7B31E4BA80D0078A9EE /* AppDelegate.swift */; };
 		C06FE7B91E4BA80D0078A9EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C06FE7B71E4BA80D0078A9EE /* Main.storyboard */; };
 		C06FE7BB1E4BA80D0078A9EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C06FE7BA1E4BA80D0078A9EE /* Assets.xcassets */; };
@@ -38,6 +41,9 @@
 		C037E2311E4BDFBB00D2DDBC /* ComposerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComposerViewController.xib; path = Composer/ComposerViewController.xib; sourceTree = "<group>"; };
 		C037E2341E4BE00200D2DDBC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Profile/ProfileViewController.swift; sourceTree = "<group>"; };
 		C037E2351E4BE00200D2DDBC /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = Profile/ProfileViewController.xib; sourceTree = "<group>"; };
+		C037E2381E4BE42000D2DDBC /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Common/Colors.swift; sourceTree = "<group>"; };
+		C037E23A1E4BE62200D2DDBC /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Appearance.swift; path = Common/Appearance.swift; sourceTree = "<group>"; };
+		C037E23C1E4C094E00D2DDBC /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tweet.swift; path = Models/Tweet.swift; sourceTree = "<group>"; };
 		C06FE7B01E4BA80D0078A9EE /* Budgie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budgie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06FE7B31E4BA80D0078A9EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C06FE7B81E4BA80D0078A9EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,6 +84,7 @@
 		C037E21C1E4BC3B800D2DDBC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C037E23C1E4C094E00D2DDBC /* Tweet.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -106,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				C037E2231E4BC71800D2DDBC /* Constants.swift */,
+				C037E2381E4BE42000D2DDBC /* Colors.swift */,
+				C037E23A1E4BE62200D2DDBC /* Appearance.swift */,
 			);
 			name = Commons;
 			sourceTree = "<group>";
@@ -298,6 +307,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C037E2321E4BDFBB00D2DDBC /* ComposerViewController.swift in Sources */,
+				C037E23D1E4C094E00D2DDBC /* Tweet.swift in Sources */,
+				C037E23B1E4BE62200D2DDBC /* Appearance.swift in Sources */,
+				C037E2391E4BE42000D2DDBC /* Colors.swift in Sources */,
 				C06FE7B41E4BA80D0078A9EE /* AppDelegate.swift in Sources */,
 				C037E22B1E4BD63A00D2DDBC /* MainTabBarController.swift in Sources */,
 				C037E21F1E4BC56400D2DDBC /* HomeViewController.swift in Sources */,
