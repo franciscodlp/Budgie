@@ -32,7 +32,10 @@ class TwitterClient {
       let isFavorite = arc4random_uniform(5) % 2 == 0 ? true : false
       let isRetweeted = arc4random_uniform(5) % 2 == 0 ? true : false
       let date = Date(timeInterval: Double(arc4random_uniform(260000)), since: Date())
-      let tweet: Tweet! = Tweet(k.TweetGenerator.names[index], userHandler: k.TweetGenerator.handlers[index], userPhotoURL: k.TweetGenerator.userPhotoURLs[index], date: date, content: k.TweetGenerator.texts[index], shareCounter: shareCounter, retweetsCounter: retweetCounter, likesCounter: likesCounter, isFavorite: isFavorite, isRetweeted: isRetweeted)
+      let tweet: Tweet! = Tweet(k.TweetGenerator.names[index], userHandler: k.TweetGenerator.handlers[index],
+                                userPhotoURL: k.TweetGenerator.userPhotoURLs[index], date: date, content: k.TweetGenerator.texts[index],
+                                shareCounter: shareCounter, retweetsCounter: retweetCounter, likesCounter: likesCounter,
+                                isFavorite: isFavorite, isRetweeted: isRetweeted)
       tweets.append(tweet)
     }
 

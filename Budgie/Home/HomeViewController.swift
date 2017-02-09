@@ -101,7 +101,9 @@ extension HomeViewController: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: k.tweetCellReuseID, for: indexPath) as? HomeTweetCell else { return UITableViewCell() }
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: k.tweetCellReuseID, for: indexPath) as? HomeTweetCell else {
+      return UITableViewCell()
+    }
     cell.delegate = self
     let tweet = tweets[indexPath.row]
 
@@ -120,8 +122,10 @@ extension HomeViewController: UITableViewDataSource {
     }
 
     let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30.0)
-    cell.profileImageView?.af_setImage(withURLRequest: request, placeholderImage: k.profilePlaceholder, filter: nil, progress: nil, progressQueue: .main, imageTransition: .crossDissolve(0.5), runImageTransitionIfCached: false, completion: { response in
-      cell.profileImageView?.image = response.result.value ?? k.profilePlaceholder
+    cell.profileImageView?.af_setImage(withURLRequest: request, placeholderImage: k.profilePlaceholder, filter: nil, progress: nil,
+                                       progressQueue: .main, imageTransition: .crossDissolve(0.5), runImageTransitionIfCached: false,
+                                       completion: { response in
+                                        cell.profileImageView?.image = response.result.value ?? k.profilePlaceholder
     })
     return cell
   }

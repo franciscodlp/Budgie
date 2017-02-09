@@ -20,7 +20,8 @@ class Tweet {
   var isFavorite: Bool!
   var isRetweeted: Bool!
 
-  convenience init?(_ userName: String?, userHandler: String?, userPhotoURL: String?, date: Date?, content: String?, shareCounter: Double?, retweetsCounter: Double?, likesCounter: Double?, isFavorite: Bool?, isRetweeted: Bool?) {
+  convenience init?(_ userName: String?, userHandler: String?, userPhotoURL: String?, date: Date?, content: String?, shareCounter: Double?,
+                    retweetsCounter: Double?, likesCounter: Double?, isFavorite: Bool?, isRetweeted: Bool?) {
     self.init()
     guard let userName = userName,
       let userHandler = userHandler,

@@ -1,5 +1,5 @@
 disabled_rules: 
-  - line_length
+#  - line_length
 
 opt_in_rules:
   - empty_count
@@ -10,3 +10,4 @@ included:
 excluded:
   - Pods
 
+line_length: 140

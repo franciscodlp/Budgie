@@ -80,8 +80,9 @@ class SingleTweetViewController: UIViewController {
 
     guard let url = URL(string: profileImageURL) else { return }
 
-    profileImageView.af_setImage(withURL: url, placeholderImage: k.profilePlaceholder, filter: nil, progress: nil, progressQueue: .main, imageTransition: .crossDissolve(0.5), runImageTransitionIfCached: false) { response in
-      self.profileImageView?.image = response.result.value ?? k.profilePlaceholder
+    profileImageView.af_setImage(withURL: url, placeholderImage: k.profilePlaceholder, filter: nil, progress: nil, progressQueue: .main,
+                                 imageTransition: .crossDissolve(0.5), runImageTransitionIfCached: false) { response in
+                                  self.profileImageView?.image = response.result.value ?? k.profilePlaceholder
     }
     let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(onBack))
     navigationItem.leftBarButtonItem = backButton
