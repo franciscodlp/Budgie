@@ -9,39 +9,39 @@
 import Foundation
 
 class Tweet {
-  var userName: String?
-  var userHandler: String?
-  var userPhotoURL: String?
-  var userDate: Date?
-  var content: String?
-  var shareCounter: Double?
-  var retweetsCounter: Double?
-  var likesCounter: Double?
-  var isFavourited: Bool?
-  var isRetweeted: Bool?
+  var userName: String!
+  var userHandler: String!
+  var userPhotoURL: String!
+  var date: Date!
+  var content: String!
+  var shareCounter: Double!
+  var retweetsCounter: Double!
+  var likesCounter: Double!
+  var isFavorite: Bool!
+  var isRetweeted: Bool!
 
-  convenience init?(_ userName: String?, userHandler: String?, userPhotoURL: String?, userDate: Date?, content: String?, shareCounter: Double?, retweetsCounter: Double?, likesCounter: Double?, isFavourited: Bool?, isRetweeted: Bool?) {
+  convenience init?(_ userName: String?, userHandler: String?, userPhotoURL: String?, date: Date?, content: String?, shareCounter: Double?, retweetsCounter: Double?, likesCounter: Double?, isFavorite: Bool?, isRetweeted: Bool?) {
     self.init()
     guard let userName = userName,
       let userHandler = userHandler,
       let userPhotoURL = userPhotoURL,
-      let userDate = userDate,
+      let date = date,
       let content = content,
       let shareCounter = shareCounter,
       let retweetsCounter = retweetsCounter,
       let likesCounter = likesCounter,
-      let isFavourited = isFavourited,
+      let isFavorite = isFavorite,
       let isRetweeted = isRetweeted else { return nil }
 
     self.userName = userName
     self.userHandler = userHandler
     self.userPhotoURL = userPhotoURL
-    self.userDate = userDate
+    self.date = date
     self.content = content
     self.shareCounter = shareCounter
     self.retweetsCounter = retweetsCounter
     self.likesCounter = likesCounter
-    self.isFavourited = isFavourited
+    self.isFavorite = isFavorite
     self.isRetweeted = isRetweeted
   }
 

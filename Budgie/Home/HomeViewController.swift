@@ -85,6 +85,12 @@ extension HomeViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
     return 150
   }
+
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let singleTweetViewController = SingleTweetViewController(nibName: k.singleTweetNIBName, bundle: nil)
+    singleTweetViewController.tweet = tweets[indexPath.row]
+    self.navigationController?.pushViewController(singleTweetViewController, animated: true)
+  }
 }
 
 // MARK: UITableViewDataSource
@@ -95,6 +101,7 @@ extension HomeViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: k.tweetCellReuseID, for: indexPath) as? HomeTweetCell else { return UITableViewCell() }
+    cell.delegate = self
     let tweet = tweets[indexPath.row]
 
     cell.nameLabel.text = tweet.userName ?? "Unknown"
@@ -103,7 +110,7 @@ extension HomeViewController: UITableViewDataSource {
     cell.shareCounter = tweet.shareCounter ?? 0.0
     cell.retweetsCounter = tweet.retweetsCounter ?? 0.0
     cell.likesCounter = tweet.likesCounter ?? 0.0
-    cell.isFavourite = tweet.isFavourited
+    cell.isFavorite = tweet.isFavorite
     cell.isRetweeted = tweet.isRetweeted
 
     guard let urlString = tweet.userPhotoURL, let url = URL(string: urlString) else {
@@ -116,5 +123,20 @@ extension HomeViewController: UITableViewDataSource {
       cell.profileImageView?.image = response.result.value ?? k.profilePlaceholder
     })
     return cell
+  }
+}
+
+// MARK: HomeTweetCellDelegate
+extension HomeViewController: HomeTweetCellDelegate {
+  func onShareButton() {
+    // Call method in Twitter Client
+  }
+
+  func onRetweetButton() {
+    // Call method in Twitter Client
+  }
+
+  func onLikeButton() {
+    // Call method in Twitter Client
   }
 }

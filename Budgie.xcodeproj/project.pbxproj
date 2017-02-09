@@ -27,6 +27,8 @@
 		C06FE7BE1E4BA80D0078A9EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C06FE7BC1E4BA80D0078A9EE /* LaunchScreen.storyboard */; };
 		C0D21D4A1E4C4E5300A2DFFD /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D21D491E4C4E5300A2DFFD /* TwitterClient.swift */; };
 		C0D21D4C1E4C58DD00A2DFFD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D21D4B1E4C58DD00A2DFFD /* User.swift */; };
+		C0D21D4F1E4C6CE100A2DFFD /* SingleTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D21D4D1E4C6CE100A2DFFD /* SingleTweetViewController.swift */; };
+		C0D21D501E4C6CE100A2DFFD /* SingleTweetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0D21D4E1E4C6CE100A2DFFD /* SingleTweetViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		C06FE7BF1E4BA80D0078A9EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0D21D491E4C4E5300A2DFFD /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwitterClient.swift; path = Common/TwitterClient.swift; sourceTree = "<group>"; };
 		C0D21D4B1E4C58DD00A2DFFD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
+		C0D21D4D1E4C6CE100A2DFFD /* SingleTweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SingleTweetViewController.swift; path = Home/SingleTweetViewController.swift; sourceTree = "<group>"; };
+		C0D21D4E1E4C6CE100A2DFFD /* SingleTweetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SingleTweetViewController.xib; path = Home/SingleTweetViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 				C037E21E1E4BC56400D2DDBC /* HomeViewController.xib */,
 				C037E2251E4BD28900D2DDBC /* HomeTweetCell.swift */,
 				C037E2261E4BD28900D2DDBC /* HomeTweetCell.xib */,
+				C0D21D4D1E4C6CE100A2DFFD /* SingleTweetViewController.swift */,
+				C0D21D4E1E4C6CE100A2DFFD /* SingleTweetViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -234,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0D21D501E4C6CE100A2DFFD /* SingleTweetViewController.xib in Resources */,
 				C037E2371E4BE00200D2DDBC /* ProfileViewController.xib in Resources */,
 				C037E2331E4BDFBB00D2DDBC /* ComposerViewController.xib in Resources */,
 				C06FE7BE1E4BA80D0078A9EE /* LaunchScreen.storyboard in Resources */,
@@ -318,6 +325,7 @@
 				C037E23B1E4BE62200D2DDBC /* Appearance.swift in Sources */,
 				C037E2391E4BE42000D2DDBC /* Colors.swift in Sources */,
 				C06FE7B41E4BA80D0078A9EE /* AppDelegate.swift in Sources */,
+				C0D21D4F1E4C6CE100A2DFFD /* SingleTweetViewController.swift in Sources */,
 				C037E22B1E4BD63A00D2DDBC /* MainTabBarController.swift in Sources */,
 				C037E21F1E4BC56400D2DDBC /* HomeViewController.swift in Sources */,
 				C037E2361E4BE00200D2DDBC /* ProfileViewController.swift in Sources */,

@@ -49,9 +49,9 @@ class HomeTweetCell: UITableViewCell {
       retweetButton.setImage(image, for: .normal)
     }
   }
-  var isFavourite: Bool! = false {
+  var isFavorite: Bool! = false {
     didSet {
-      let image = isFavourite! ? k.likeIconSelected : k.likeIconSolid
+      let image = isFavorite! ? k.likeIconSelected : k.likeIconSolid
       likeButton.setImage(image, for: .normal)
     }
   }
@@ -96,7 +96,7 @@ class HomeTweetCell: UITableViewCell {
   @IBAction func onLikeButton(_ sender: UIButton) {
     defer {
       delegate?.onLikeButton()
-      isFavourite = !isFavourite
+      isFavorite = !isFavorite
     }
 
     guard let counterString = likeButton.titleLabel?.text else {
@@ -105,7 +105,7 @@ class HomeTweetCell: UITableViewCell {
       return
     }
 
-    if isFavourite! {
+    if isFavorite! {
       likeButton.setTitle(String(format: "%.0f", Double(counterString)! - 1), for: .normal)
       likeButton.setImage(k.likeIconSolid, for: .normal)
     } else {

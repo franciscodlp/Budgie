@@ -14,7 +14,7 @@ class User {
 
   let name: String? = "Francisco de la Pena"
   let handler: String? = "@franontherocks"
-  let profilePictureUrl = "https://pbs.twimg.com/profile_images/642002415193952256/McvJ48wV.png"
+  let profilePictureURL = "https://pbs.twimg.com/profile_images/642002415193952256/McvJ48wV.png"
 
   private init() { }
 

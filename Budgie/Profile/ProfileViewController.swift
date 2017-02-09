@@ -11,7 +11,7 @@ import UIKit
 class ProfileViewController: UIViewController {
 
   @IBOutlet var imageView: UIImageView!
-  
+
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }

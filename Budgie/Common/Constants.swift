@@ -14,6 +14,7 @@ class k {
   static let composerNIBName = "ComposerViewController"
   static let tabBarNIBName = "MainTabBarController"
   static let profileNIBName = "ProfileViewController"
+  static let singleTweetNIBName = "SingleTweetViewController"
   static let tweetCellNIBName = "HomeTweetCell"
   static let tweetCellReuseID = "HomeTweet"
 
@@ -21,6 +22,7 @@ class k {
   static let composerNIB = UINib(nibName: k.composerNIBName, bundle: nil)
   static let tabBarNIB = UINib(nibName: k.tabBarNIBName, bundle: nil)
   static let profileNIB = UINib(nibName: k.profileNIBName, bundle: nil)
+  static let singleTweetNIB = UINib(nibName: k.singleTweetNIBName, bundle: nil)
   static let tweetCellNIB = UINib(nibName: k.tweetCellNIBName, bundle: nil)
 
   static let homeTabBarTitle = "Home"
@@ -38,6 +40,7 @@ class k {
   static let likeIconSolid = UIImage(named: "LikeIconSolid")
   static let likeIconSelected = UIImage(named: "LikeIconSelected")
   static let shareIcon = UIImage(named: "ShareIcon")
+  static let coverImage = UIImage(named: "CoverImage")
 
   static let maxTweetLength = 140
 
