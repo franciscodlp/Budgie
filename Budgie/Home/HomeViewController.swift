@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
   @IBOutlet var tableView: UITableView!
   fileprivate var refresher: UIRefreshControl!
   fileprivate var client: TwitterClient!
-  fileprivate var tweets: [Tweet]!
+  var tweets: [Tweet]!
 
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -89,6 +89,7 @@ extension HomeViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let singleTweetViewController = SingleTweetViewController(nibName: k.singleTweetNIBName, bundle: nil)
     singleTweetViewController.tweet = tweets[indexPath.row]
+    singleTweetViewController.indexPath = indexPath
     self.navigationController?.pushViewController(singleTweetViewController, animated: true)
   }
 }
@@ -128,15 +129,24 @@ extension HomeViewController: UITableViewDataSource {
 
 // MARK: HomeTweetCellDelegate
 extension HomeViewController: HomeTweetCellDelegate {
-  func onShareButton() {
+
+  func onShareButton(in cell: HomeTweetCell) {
+    guard let index = tableView.indexPath(for: cell)?.row else { return }
+    tweets[index].shareCounter = tweets[index].shareCounter + 1
     // Call method in Twitter Client
   }
 
-  func onRetweetButton() {
+  func onRetweetButton(in cell: HomeTweetCell, _ isRetweeted: Bool) {
+    guard let index = tableView.indexPath(for: cell)?.row else { return }
+    tweets[index].isRetweeted = isRetweeted
+    tweets[index].retweetsCounter = tweets[index].retweetsCounter + (isRetweeted ? 1 : -1)
     // Call method in Twitter Client
   }
 
-  func onLikeButton() {
+  func onLikeButton(in cell: HomeTweetCell, _ isFavorite: Bool) {
+    guard let index = tableView.indexPath(for: cell)?.row else { return }
+    tweets[index].isFavorite = isFavorite
+    tweets[index].likesCounter = tweets[index].likesCounter + (isFavorite ? 1 : -1)
     // Call method in Twitter Client
   }
 }

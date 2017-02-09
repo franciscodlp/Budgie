@@ -9,9 +9,9 @@
 import UIKit
 
 protocol HomeTweetCellDelegate: class {
-  func onShareButton()
-  func onRetweetButton()
-  func onLikeButton()
+  func onShareButton(in cell: HomeTweetCell)
+  func onRetweetButton(in cell: HomeTweetCell, _ isRetweeted: Bool)
+  func onLikeButton(in cell: HomeTweetCell, _ isFavorite: Bool)
 }
 
 class HomeTweetCell: UITableViewCell {
@@ -58,7 +58,7 @@ class HomeTweetCell: UITableViewCell {
 
   @IBAction func onShareButton(_ sender: UIButton) {
     defer {
-      delegate?.onShareButton()
+      delegate?.onShareButton(in: self)
     }
 
     guard let counterString = shareButton.titleLabel?.text else {
@@ -72,8 +72,8 @@ class HomeTweetCell: UITableViewCell {
 
   @IBAction func onRetweetButton(_ sender: UIButton) {
     defer {
-      delegate?.onRetweetButton()
       isRetweeted = !isRetweeted
+      delegate?.onRetweetButton(in: self, isRetweeted)
     }
 
     guard let counterString = retweetButton.titleLabel?.text else {
@@ -95,8 +95,8 @@ class HomeTweetCell: UITableViewCell {
 
   @IBAction func onLikeButton(_ sender: UIButton) {
     defer {
-      delegate?.onLikeButton()
       isFavorite = !isFavorite
+      delegate?.onLikeButton(in: self, isFavorite)
     }
 
     guard let counterString = likeButton.titleLabel?.text else {

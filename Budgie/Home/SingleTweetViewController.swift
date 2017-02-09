@@ -12,6 +12,8 @@ import AlamofireImage
 class SingleTweetViewController: UIViewController {
 
   var tweet: Tweet!
+  var indexPath: IndexPath!
+
   @IBOutlet var coverImageView: UIImageView!
   @IBOutlet var profileImageView: UIImageView!
   @IBOutlet var nameLabel: UILabel!
@@ -42,8 +44,6 @@ class SingleTweetViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    contentLabel.contentMode = .topLeft
 
     coverImageView.image = k.coverImage
     coverImageView.contentMode = .scaleAspectFill
@@ -83,9 +83,27 @@ class SingleTweetViewController: UIViewController {
     profileImageView.af_setImage(withURL: url, placeholderImage: k.profilePlaceholder, filter: nil, progress: nil, progressQueue: .main, imageTransition: .crossDissolve(0.5), runImageTransitionIfCached: false) { response in
       self.profileImageView?.image = response.result.value ?? k.profilePlaceholder
     }
+    let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(onBack))
+    navigationItem.leftBarButtonItem = backButton
+  }
+
+  func onBack() {
+    defer {
+      let _ = navigationController?.popViewController(animated: true)
+    }
+    guard let callerViewController = navigationController?.viewControllers[0] as? HomeViewController else { return }
+    callerViewController.tweets[indexPath.row].shareCounter = shareCounter
+    callerViewController.tweets[indexPath.row].retweetsCounter = retweetsCounter
+    callerViewController.tweets[indexPath.row].likesCounter = likesCounter
+    callerViewController.tweets[indexPath.row].isRetweeted = isRetweeted
+    callerViewController.tweets[indexPath.row].isFavorite = isFavorite
+    callerViewController.tableView.reloadRows(at: [indexPath], with: .none)
   }
 
   @IBAction func onShareButton(_ sender: UIButton) {
+    defer {
+      shareCounter! += 1.0
+    }
     guard let counterString = shareButton.titleLabel?.text else {
       shareButton.setTitle("1", for: .normal)
       return
@@ -98,7 +116,10 @@ class SingleTweetViewController: UIViewController {
   @IBAction func onRetweetButton(_ sender: UIButton) {
     defer {
       isRetweeted = !isRetweeted
+      // swiftlint:disable:next shorthand_operator
+      retweetsCounter = retweetsCounter + (isRetweeted! ? 1 : -1)
     }
+
     guard let counterString = retweetButton.titleLabel?.text else {
       retweetButton.setTitle("1", for: .normal)
       retweetButton.setImage(k.retweetIconSelected, for: .normal)
@@ -119,6 +140,8 @@ class SingleTweetViewController: UIViewController {
   @IBAction func onLikeButton(_ sender: UIButton) {
     defer {
       isFavorite = !isFavorite
+      // swiftlint:disable:next shorthand_operator
+      likesCounter = likesCounter + (isFavorite! ? 1 : -1)
     }
 
     guard let counterString = likeButton.titleLabel?.text else {
