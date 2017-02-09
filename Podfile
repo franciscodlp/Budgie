@@ -9,5 +9,6 @@ target 'Budgie' do
 
   # Pods for Budgie
   pod 'SwiftLint'
+  pod 'AlamofireImage'
 
 end
