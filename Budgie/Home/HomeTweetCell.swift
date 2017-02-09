@@ -10,8 +10,8 @@ import UIKit
 
 protocol HomeTweetCellDelegate: class {
   func onShareButton(in cell: HomeTweetCell)
-  func onRetweetButton(in cell: HomeTweetCell, _ isRetweeted: Bool)
-  func onLikeButton(in cell: HomeTweetCell, _ isFavorite: Bool)
+  func onRetweetButton(in cell: HomeTweetCell, _ retweeted: Bool)
+  func onLikeButton(in cell: HomeTweetCell, _ liked: Bool)
 }
 
 class HomeTweetCell: UITableViewCell {
@@ -43,15 +43,15 @@ class HomeTweetCell: UITableViewCell {
     }
   }
 
-  var isRetweeted: Bool! = false {
+  var retweeted: Bool! = false {
     didSet {
-      let image = isRetweeted! ? k.retweetIconSelected : k.retweetIcon
+      let image = retweeted! ? k.retweetIconSelected : k.retweetIcon
       retweetButton.setImage(image, for: .normal)
     }
   }
-  var isFavorite: Bool! = false {
+  var liked: Bool! = false {
     didSet {
-      let image = isFavorite! ? k.likeIconSelected : k.likeIconSolid
+      let image = liked! ? k.likeIconSelected : k.likeIconSolid
       likeButton.setImage(image, for: .normal)
     }
   }
@@ -72,8 +72,8 @@ class HomeTweetCell: UITableViewCell {
 
   @IBAction func onRetweetButton(_ sender: UIButton) {
     defer {
-      isRetweeted = !isRetweeted
-      delegate?.onRetweetButton(in: self, isRetweeted)
+      retweeted = !retweeted
+      delegate?.onRetweetButton(in: self, retweeted)
     }
 
     guard let counterString = retweetButton.titleLabel?.text else {
@@ -82,7 +82,7 @@ class HomeTweetCell: UITableViewCell {
       return
     }
 
-    if isRetweeted! {
+    if retweeted! {
       retweetButton.setTitle(String(format: "%.0f", Double(counterString)! - 1), for: .normal)
       retweetButton.setImage(k.retweetIcon, for: .normal)
     } else {
@@ -95,8 +95,8 @@ class HomeTweetCell: UITableViewCell {
 
   @IBAction func onLikeButton(_ sender: UIButton) {
     defer {
-      isFavorite = !isFavorite
-      delegate?.onLikeButton(in: self, isFavorite)
+      liked = !liked
+      delegate?.onLikeButton(in: self, liked)
     }
 
     guard let counterString = likeButton.titleLabel?.text else {
@@ -105,7 +105,7 @@ class HomeTweetCell: UITableViewCell {
       return
     }
 
-    if isFavorite! {
+    if liked! {
       likeButton.setTitle(String(format: "%.0f", Double(counterString)! - 1), for: .normal)
       likeButton.setImage(k.likeIconSolid, for: .normal)
     } else {

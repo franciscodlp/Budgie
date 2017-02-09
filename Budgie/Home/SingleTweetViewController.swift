@@ -31,8 +31,8 @@ class SingleTweetViewController: UIViewController {
   private var shareCounter: Double!
   private var retweetsCounter: Double!
   private var likesCounter: Double!
-  private var isFavorite: Bool!
-  private var isRetweeted: Bool!
+  private var liked: Bool!
+  private var retweeted: Bool!
 
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -62,8 +62,8 @@ class SingleTweetViewController: UIViewController {
     shareCounter = tweet.shareCounter ?? 0.0
     retweetsCounter = tweet.retweetsCounter ?? 0.0
     likesCounter = tweet.likesCounter ?? 0.0
-    isFavorite = tweet.isFavorite ?? false
-    isRetweeted = tweet.isRetweeted ?? false
+    liked = tweet.liked ?? false
+    retweeted = tweet.retweeted ?? false
 
     nameLabel.text = name
     handlerLabel.text = handler
@@ -72,10 +72,10 @@ class SingleTweetViewController: UIViewController {
     shareButton.setImage(k.shareIcon, for: .normal)
     shareButton.setTitle(String(format: "%.0f", shareCounter), for: .normal)
 
-    retweetButton.setImage(isRetweeted! ? k.retweetIconSelected : k.retweetIcon, for: .normal)
+    retweetButton.setImage(retweeted! ? k.retweetIconSelected : k.retweetIcon, for: .normal)
     retweetButton.setTitle(String(format: "%.0f", retweetsCounter), for: .normal)
 
-    likeButton.setImage(isFavorite! ? k.likeIconSelected : k.likeIconSolid, for: .normal)
+    likeButton.setImage(liked! ? k.likeIconSelected : k.likeIconSolid, for: .normal)
     likeButton.setTitle(String(format: "%.0f", likesCounter), for: .normal)
 
     guard let url = URL(string: profileImageURL) else { return }
@@ -96,8 +96,8 @@ class SingleTweetViewController: UIViewController {
     callerViewController.tweets[indexPath.row].shareCounter = shareCounter
     callerViewController.tweets[indexPath.row].retweetsCounter = retweetsCounter
     callerViewController.tweets[indexPath.row].likesCounter = likesCounter
-    callerViewController.tweets[indexPath.row].isRetweeted = isRetweeted
-    callerViewController.tweets[indexPath.row].isFavorite = isFavorite
+    callerViewController.tweets[indexPath.row].retweeted = retweeted
+    callerViewController.tweets[indexPath.row].liked = liked
     callerViewController.tableView.reloadRows(at: [indexPath], with: .none)
   }
 
@@ -116,9 +116,9 @@ class SingleTweetViewController: UIViewController {
 
   @IBAction func onRetweetButton(_ sender: UIButton) {
     defer {
-      isRetweeted = !isRetweeted
+      retweeted = !retweeted
       // swiftlint:disable:next shorthand_operator
-      retweetsCounter = retweetsCounter + (isRetweeted! ? 1 : -1)
+      retweetsCounter = retweetsCounter + (retweeted! ? 1 : -1)
     }
 
     guard let counterString = retweetButton.titleLabel?.text else {
@@ -127,7 +127,7 @@ class SingleTweetViewController: UIViewController {
       return
     }
 
-    if isRetweeted! {
+    if retweeted! {
       retweetButton.setTitle(String(format: "%.0f", Double(counterString)! - 1), for: .normal)
       retweetButton.setImage(k.retweetIcon, for: .normal)
     } else {
@@ -140,9 +140,9 @@ class SingleTweetViewController: UIViewController {
 
   @IBAction func onLikeButton(_ sender: UIButton) {
     defer {
-      isFavorite = !isFavorite
+      liked = !liked
       // swiftlint:disable:next shorthand_operator
-      likesCounter = likesCounter + (isFavorite! ? 1 : -1)
+      likesCounter = likesCounter + (liked! ? 1 : -1)
     }
 
     guard let counterString = likeButton.titleLabel?.text else {
@@ -151,7 +151,7 @@ class SingleTweetViewController: UIViewController {
       return
     }
 
-    if isFavorite! {
+    if liked! {
       likeButton.setTitle(String(format: "%.0f", Double(counterString)! - 1), for: .normal)
       likeButton.setImage(k.likeIconSolid, for: .normal)
     } else {

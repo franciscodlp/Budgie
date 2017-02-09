@@ -9,13 +9,19 @@
 import Foundation
 
 class TwitterClient {
-  static let shared = TwitterClient()
 
+  static let shared = TwitterClient()
   var timeLine: [Tweet] = []
 
   private init() { }
 
-  // Example of method with return success/failure return blocks
+  /// Example of method with return success/failure return blocks.
+  /// It generates fake tweets and return them to user in a success closure.
+  ///
+  /// - parameter counter:    Number of tweets to generate
+  ///
+  ///
+  /// - returns: Void
 
   func loadMoreTweets(_ counter: Int, success: ([Tweet]) -> Void, failure: (Error) -> Void) {
 
@@ -29,13 +35,13 @@ class TwitterClient {
       let shareCounter = Double(arc4random_uniform(555))
       let retweetCounter = Double(arc4random_uniform(555))
       let likesCounter = Double(arc4random_uniform(555))
-      let isFavorite = arc4random_uniform(5) % 2 == 0 ? true : false
-      let isRetweeted = arc4random_uniform(5) % 2 == 0 ? true : false
+      let liked = arc4random_uniform(5) % 2 == 0 ? true : false
+      let retweeted = arc4random_uniform(5) % 2 == 0 ? true : false
       let date = Date(timeInterval: Double(arc4random_uniform(260000)), since: Date())
       let tweet: Tweet! = Tweet(k.TweetGenerator.names[index], userHandler: k.TweetGenerator.handlers[index],
                                 userPhotoURL: k.TweetGenerator.userPhotoURLs[index], date: date, content: k.TweetGenerator.texts[index],
                                 shareCounter: shareCounter, retweetsCounter: retweetCounter, likesCounter: likesCounter,
-                                isFavorite: isFavorite, isRetweeted: isRetweeted)
+                                liked: liked, retweeted: retweeted)
       tweets.append(tweet)
     }
 
@@ -45,7 +51,13 @@ class TwitterClient {
 
   }
 
-  // Exmaple of method posting notification
+  /// Exmaple of method posting notification
+  /// It generates fake tweets and return them to user in a success closure.
+  ///
+  /// - parameter tweet:    Tweet to post
+  ///
+  ///
+  /// - returns: Void
 
   func post(_ tweet: Tweet) {
 

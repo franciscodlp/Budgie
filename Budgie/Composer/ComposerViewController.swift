@@ -54,7 +54,7 @@ class ComposerViewController: UIViewController {
     guard let user = user, let content = textView.text, content != "" else { return }
 
     guard let newTweet = Tweet(user.name, userHandler: user.handler, userPhotoURL: user.profilePictureURL, date: Date(), content: content,
-                               shareCounter: 0, retweetsCounter: 0, likesCounter: 0, isFavorite: false, isRetweeted: false) else { return }
+                               shareCounter: 0, retweetsCounter: 0, likesCounter: 0, liked: false, retweeted: false) else { return }
 
     client.post(newTweet)
 

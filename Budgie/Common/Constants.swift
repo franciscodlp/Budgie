@@ -10,6 +10,7 @@ import UIKit
 
 // swiftlint:disable:next type_name
 class k {
+
   static let homeNIBName = "HomeViewController"
   static let composerNIBName = "ComposerViewController"
   static let tabBarNIBName = "MainTabBarController"
@@ -49,7 +50,9 @@ class k {
 }
 
 extension k {
+
   struct TweetGenerator {
+
     static let names = ["Sam Altman", "Francisco de la Pena", "NatashaTheRobot", "Product Hunt", "CodePath", "Amazon Web Services",
                         "Karl the Fog", "Entrepreneur", "Red Bull", "Mike Butcher"]
 
@@ -78,12 +81,15 @@ extension k {
                         "incidunt ut labore et dolore magnam",
                         "aliquam quaerat voluptatem. Ut enim ad minima veniam, quis"]
   }
+
 }
 
 extension k {
+
   static let newTweetsAvailableName = Notification.Name("io.twisterlabs.newTweetsAvailableName")
   static let tweetPostedName = Notification.Name("io.twisterlabs.tweetPosted")
 
   static let newTweetsAvailableNotification = Notification(name: k.newTweetsAvailableName)
   static let tweetPostedNotification = Notification(name: k.tweetPostedName)
+
 }

@@ -9,6 +9,7 @@
 import Foundation
 
 class Tweet {
+
   var userName: String!
   var userHandler: String!
   var userPhotoURL: String!
@@ -17,11 +18,11 @@ class Tweet {
   var shareCounter: Double!
   var retweetsCounter: Double!
   var likesCounter: Double!
-  var isFavorite: Bool!
-  var isRetweeted: Bool!
+  var liked: Bool!
+  var retweeted: Bool!
 
   convenience init?(_ userName: String?, userHandler: String?, userPhotoURL: String?, date: Date?, content: String?, shareCounter: Double?,
-                    retweetsCounter: Double?, likesCounter: Double?, isFavorite: Bool?, isRetweeted: Bool?) {
+                    retweetsCounter: Double?, likesCounter: Double?, liked: Bool?, retweeted: Bool?) {
     self.init()
     guard let userName = userName,
       let userHandler = userHandler,
@@ -31,8 +32,8 @@ class Tweet {
       let shareCounter = shareCounter,
       let retweetsCounter = retweetsCounter,
       let likesCounter = likesCounter,
-      let isFavorite = isFavorite,
-      let isRetweeted = isRetweeted else { return nil }
+      let liked = liked,
+      let retweeted = retweeted else { return nil }
 
     self.userName = userName
     self.userHandler = userHandler
@@ -42,8 +43,8 @@ class Tweet {
     self.shareCounter = shareCounter
     self.retweetsCounter = retweetsCounter
     self.likesCounter = likesCounter
-    self.isFavorite = isFavorite
-    self.isRetweeted = isRetweeted
+    self.liked = liked
+    self.retweeted = retweeted
   }
 
 }

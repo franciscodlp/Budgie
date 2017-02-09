@@ -59,17 +59,19 @@ class HomeViewController: UIViewController {
   func fetchTweets() {
     let count = 10
 
-    client.loadMoreTweets(count, success: { tweets in
-      refresher.endRefreshing()
-      self.tweets = tweets + (self.tweets ?? [])
-      let indexPaths = (0..<count).map { IndexPath(row: $0, section: 0) }
-      tableView.beginUpdates()
-      tableView.insertRows(at: indexPaths, with: .automatic)
-      tableView.endUpdates()
-    }) { error in
+    client.loadMoreTweets(count,
+      success: { tweets in
+        refresher.endRefreshing()
+        self.tweets = tweets + (self.tweets ?? [])
+        let indexPaths = (0..<count).map { IndexPath(row: $0, section: 0) }
+        tableView.beginUpdates()
+        tableView.insertRows(at: indexPaths, with: .automatic)
+        tableView.endUpdates()
+    }, failure: { error in
       refresher.endRefreshing()
       print(error.localizedDescription)
-    }
+    })
+
   }
 
   func onComposerButton() {
@@ -113,8 +115,8 @@ extension HomeViewController: UITableViewDataSource {
     cell.shareCounter = tweet.shareCounter ?? 0.0
     cell.retweetsCounter = tweet.retweetsCounter ?? 0.0
     cell.likesCounter = tweet.likesCounter ?? 0.0
-    cell.isFavorite = tweet.isFavorite
-    cell.isRetweeted = tweet.isRetweeted
+    cell.liked = tweet.liked
+    cell.retweeted = tweet.retweeted
 
     guard let urlString = tweet.userPhotoURL, let url = URL(string: urlString) else {
       cell.profileImageView.image = k.profilePlaceholder
@@ -140,17 +142,17 @@ extension HomeViewController: HomeTweetCellDelegate {
     // Call method in Twitter Client
   }
 
-  func onRetweetButton(in cell: HomeTweetCell, _ isRetweeted: Bool) {
+  func onRetweetButton(in cell: HomeTweetCell, _ retweeted: Bool) {
     guard let index = tableView.indexPath(for: cell)?.row else { return }
-    tweets[index].isRetweeted = isRetweeted
-    tweets[index].retweetsCounter = tweets[index].retweetsCounter + (isRetweeted ? 1 : -1)
+    tweets[index].retweeted = retweeted
+    tweets[index].retweetsCounter = tweets[index].retweetsCounter + (retweeted ? 1 : -1)
     // Call method in Twitter Client
   }
 
-  func onLikeButton(in cell: HomeTweetCell, _ isFavorite: Bool) {
+  func onLikeButton(in cell: HomeTweetCell, _ liked: Bool) {
     guard let index = tableView.indexPath(for: cell)?.row else { return }
-    tweets[index].isFavorite = isFavorite
-    tweets[index].likesCounter = tweets[index].likesCounter + (isFavorite ? 1 : -1)
+    tweets[index].liked = liked
+    tweets[index].likesCounter = tweets[index].likesCounter + (liked ? 1 : -1)
     // Call method in Twitter Client
   }
 }

@@ -16,11 +16,14 @@ extension UINavigationBar {
     UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.myYellow]
     UINavigationBar.appearance().isTranslucent = false
   }
+
 }
 
 extension UITabBar {
+
   class func setBudgieAppearance() {
     UITabBar.appearance().isTranslucent = false
     UITabBar.appearance().tintColor = .myBlue
   }
+
 }
