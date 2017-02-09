@@ -15,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+    UINavigationBar.setBudgieAppearance()
+    UITabBar.setBudgieAppearance()
+
     let tabBarController = MainTabBarController(nibName: k.tabBarNIBName, bundle: nil)
 
     window = UIWindow(frame: UIScreen.main.bounds)

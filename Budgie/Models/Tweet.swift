@@ -45,21 +45,4 @@ class Tweet {
     self.isRetweeted = isRetweeted
   }
 
-  class func getRandomTweets(_ counter: Int) -> [Tweet] {
-    var tweets: [Tweet] = []
-
-    for _ in 0..<counter {
-      let index = Int(arc4random_uniform(555)) % 10
-      let shareCounter = Double(arc4random_uniform(555555))
-      let retweetCounter = Double(arc4random_uniform(555555))
-      let likesCounter = Double(arc4random_uniform(555555))
-      let isFavourited = arc4random_uniform(5) % 2 == 0 ? true : false
-      let isRetweeted = arc4random_uniform(5) % 2 == 0 ? true : false
-      let date = Date(timeInterval: Double(arc4random_uniform(260000)), since: Date())
-      let tweet: Tweet! = Tweet(k.TweetGenerator.names[index], userHandler: k.TweetGenerator.handlers[index], userPhotoURL: k.TweetGenerator.userPhotoURLs[index], userDate: date, content: k.TweetGenerator.texts[index], shareCounter: shareCounter, retweetsCounter: retweetCounter, likesCounter: likesCounter, isFavourited: isFavourited, isRetweeted: isRetweeted)
-      tweets.append(tweet)
-    }
-
-    return tweets
-  }
 }

@@ -25,6 +25,8 @@
 		C06FE7B91E4BA80D0078A9EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C06FE7B71E4BA80D0078A9EE /* Main.storyboard */; };
 		C06FE7BB1E4BA80D0078A9EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C06FE7BA1E4BA80D0078A9EE /* Assets.xcassets */; };
 		C06FE7BE1E4BA80D0078A9EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C06FE7BC1E4BA80D0078A9EE /* LaunchScreen.storyboard */; };
+		C0D21D4A1E4C4E5300A2DFFD /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D21D491E4C4E5300A2DFFD /* TwitterClient.swift */; };
+		C0D21D4C1E4C58DD00A2DFFD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D21D4B1E4C58DD00A2DFFD /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		C06FE7BA1E4BA80D0078A9EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C06FE7BD1E4BA80D0078A9EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C06FE7BF1E4BA80D0078A9EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0D21D491E4C4E5300A2DFFD /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwitterClient.swift; path = Common/TwitterClient.swift; sourceTree = "<group>"; };
+		C0D21D4B1E4C58DD00A2DFFD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				C037E23C1E4C094E00D2DDBC /* Tweet.swift */,
+				C0D21D4B1E4C58DD00A2DFFD /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 				C037E2231E4BC71800D2DDBC /* Constants.swift */,
 				C037E2381E4BE42000D2DDBC /* Colors.swift */,
 				C037E23A1E4BE62200D2DDBC /* Appearance.swift */,
+				C0D21D491E4C4E5300A2DFFD /* TwitterClient.swift */,
 			);
 			name = Commons;
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C037E2321E4BDFBB00D2DDBC /* ComposerViewController.swift in Sources */,
+				C0D21D4C1E4C58DD00A2DFFD /* User.swift in Sources */,
 				C037E23D1E4C094E00D2DDBC /* Tweet.swift in Sources */,
 				C037E23B1E4BE62200D2DDBC /* Appearance.swift in Sources */,
 				C037E2391E4BE42000D2DDBC /* Colors.swift in Sources */,
@@ -316,6 +323,7 @@
 				C037E2361E4BE00200D2DDBC /* ProfileViewController.swift in Sources */,
 				C037E2271E4BD28900D2DDBC /* HomeTweetCell.swift in Sources */,
 				C037E2241E4BC71800D2DDBC /* Constants.swift in Sources */,
+				C0D21D4A1E4C4E5300A2DFFD /* TwitterClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
