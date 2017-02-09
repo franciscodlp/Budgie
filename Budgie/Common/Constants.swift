@@ -13,12 +13,14 @@ class k {
   static let homeNIBName = "HomeViewController"
   static let composerNIBName = "ComposerViewController"
   static let tabBarNIBName = "MainTabBarController"
+  static let profileNIBName = "ProfileViewController"
   static let tweetCellNIBName = "HomeTweetCell"
   static let tweetCellReuseID = "HomeTweet"
 
   static let homeNIB = UINib(nibName: k.homeNIBName, bundle: nil)
   static let composerNIB = UINib(nibName: k.composerNIBName, bundle: nil)
   static let tabBarNIB = UINib(nibName: k.tabBarNIBName, bundle: nil)
+  static let profileNIB = UINib(nibName: k.profileNIBName, bundle: nil)
   static let tweetCellNIB = UINib(nibName: k.tweetCellNIBName, bundle: nil)
 
   static let homeTabBarTitle = "Home"

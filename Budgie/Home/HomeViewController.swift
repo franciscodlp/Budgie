@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class HomeViewController: UIViewController {
 
   @IBOutlet var tableView: UITableView!
   fileprivate var refresher: UIRefreshControl!
+  fileprivate var client: TwitterClient!
+  fileprivate var tweets: [Tweet]!
 
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -24,44 +27,94 @@ class HomeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    NotificationCenter.default.addObserver(self, selector: #selector(loadPostedTweet), name: k.tweetPostedName, object: nil)
+
+    client = TwitterClient.shared
+
     tableView.delegate = self
     tableView.dataSource = self
 
     refresher = UIRefreshControl()
-    refresher.addTarget(self, action: #selector(fetchNewTweets), for: .valueChanged)
+    refresher.addTarget(self, action: #selector(fetchTweets), for: .valueChanged)
     tableView.addSubview(refresher)
 
     let composerButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(onComposerButton))
     navigationItem.rightBarButtonItem = composerButton
+
+    navigationItem.titleView = UIImageView(image: k.budgieTitleImage)
+
+    tableView.register(k.tweetCellNIB, forCellReuseIdentifier: k.tweetCellReuseID)
+
+    fetchTweets()
   }
 
-  func fetchNewTweets() {
-    refresher.endRefreshing()
+  func loadPostedTweet() {
+    guard let newestTweet = client.timeLine.first else { return }
+    tweets = [newestTweet] + tweets
+    tableView.beginUpdates()
+    tableView.insertRows(at: [IndexPath(row: 0, section:0)], with: .automatic)
+    tableView.endUpdates()
+  }
+
+  func fetchTweets() {
+    let count = 10
+
+    client.loadMoreTweets(count, success: { tweets in
+      refresher.endRefreshing()
+      self.tweets = tweets + (self.tweets ?? [])
+      let indexPaths = (0..<count).map { IndexPath(row: $0, section: 0) }
+      tableView.beginUpdates()
+      tableView.insertRows(at: indexPaths, with: .automatic)
+      tableView.endUpdates()
+    }) { error in
+      refresher.endRefreshing()
+      print(error.localizedDescription)
+    }
   }
 
   func onComposerButton() {
-
+    let composer = ComposerViewController(nibName: k.composerNIBName, bundle: nil)
+    self.hidesBottomBarWhenPushed = true
+    navigationController?.pushViewController(composer, animated: true)
   }
-
-}
-
-extension HomeViewController {
 
 }
 
 // MARK: UITableViewDelegate
 extension HomeViewController: UITableViewDelegate {
-
+  func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 150
+  }
 }
 
 // MARK: UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
+    return tweets?.count ?? 0
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = UITableViewCell()
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: k.tweetCellReuseID, for: indexPath) as? HomeTweetCell else { return UITableViewCell() }
+    let tweet = tweets[indexPath.row]
+
+    cell.nameLabel.text = tweet.userName ?? "Unknown"
+    cell.handlerLabel.text = tweet.userHandler ?? "@..."
+    cell.contentLabel.text = tweet.content ?? "..."
+    cell.shareCounter = tweet.shareCounter ?? 0.0
+    cell.retweetsCounter = tweet.retweetsCounter ?? 0.0
+    cell.likesCounter = tweet.likesCounter ?? 0.0
+    cell.isFavourite = tweet.isFavourited
+    cell.isRetweeted = tweet.isRetweeted
+
+    guard let urlString = tweet.userPhotoURL, let url = URL(string: urlString) else {
+      cell.profileImageView.image = k.profilePlaceholder
+      return cell
+    }
+
+    let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30.0)
+    cell.profileImageView?.af_setImage(withURLRequest: request, placeholderImage: k.profilePlaceholder, filter: nil, progress: nil, progressQueue: .main, imageTransition: .crossDissolve(0.5), runImageTransitionIfCached: false, completion: { response in
+      cell.profileImageView?.image = response.result.value ?? k.profilePlaceholder
+    })
     return cell
   }
 }
